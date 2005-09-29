@@ -1,2 +1,8 @@
 Revision history for Perl extension Module::PortablePath.
 
+0.02 very minor mods to make it pass tests without /etc/perlconfig.ini
+     also added an example eg/siteexample.pm demonstrating one way to override the default paths
+     for example for those who don't have access to /etc
+
+0.01 initial version based on internal SangerPaths.pm
+

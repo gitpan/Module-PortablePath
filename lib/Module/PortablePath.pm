@@ -33,14 +33,20 @@ sub config {
     }
   }
 
-  my $config = Config::IniFiles->new(
-				     -file => $cfgfile,
-				    );
+  my $config;
+  if(-f $cfgfile) {
+    $config = Config::IniFiles->new(
+				    -file => $cfgfile,
+				   );
+  } else {
+    $config = Config::IniFiles->new();
+  }
   return $config;
 }
 
 sub import {
   my ($pkg, @args) = @_;
+  return unless(@args);
   my $config       = &config();
   my $forward      = {};
   my $reverse      = {};

@@ -4,3 +4,5 @@ MANIFEST
 README
 t/Module-PortablePath.t
 lib/Module/PortablePath.pm
+eg/siteexample.pm
+
