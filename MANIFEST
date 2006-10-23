@@ -1,8 +1,8 @@
-Changes
-Makefile.PL
-MANIFEST
-README
-t/Module-PortablePath.t
-lib/Module/PortablePath.pm
-eg/siteexample.pm
-
+./Makefile.PL
+./eg/siteexample.pm
+./README
+./MANIFEST
+./Changes
+./t/Module-PortablePath.t
+./t/distribution.t
+./lib/Module/PortablePath.pm
