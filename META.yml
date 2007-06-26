@@ -1,0 +1,14 @@
+--- #YAML:1.0
+name:                Module-PortablePath
+version:             0.04
+abstract:            Perl extension follow modules to exist in
+license:             ~
+generated_by:        ExtUtils::MakeMaker version 6.32
+distribution_type:   module
+requires:     
+    Config::IniFiles:              2.38
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
+    version: 1.2
+author:
+    - Roger Pettett <rpettett@cpan.org>

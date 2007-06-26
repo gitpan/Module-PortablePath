@@ -1,5 +1,6 @@
 Revision history for Perl extension Module::PortablePath.
-i
+
+0.04 cleaned up for perlcritic
 0.03 support for changing LD_LIBRARY_PATH via the [ldlibs] config section
 
 0.02 very minor mods to make it pass tests without /etc/perlconfig.ini
@@ -7,4 +8,3 @@ i
      for example for those who don't have access to /etc
 
 0.01 initial version based on internal SangerPaths.pm
-

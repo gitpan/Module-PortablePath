@@ -1,8 +1,11 @@
-./Makefile.PL
-./eg/siteexample.pm
-./README
-./MANIFEST
-./Changes
-./t/Module-PortablePath.t
-./t/distribution.t
-./lib/Module/PortablePath.pm
+Changes
+eg/siteexample.pm
+lib/Module/PortablePath.pm
+Makefile.PL
+MANIFEST
+README
+t/00-critic.t
+t/00-pod.t
+t/distribution.t
+t/Module-PortablePath.t
+META.yml                                 Module meta-data (added by MakeMaker)
