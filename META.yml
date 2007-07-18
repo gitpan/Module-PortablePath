@@ -1,8 +1,8 @@
 --- #YAML:1.0
 name:                Module-PortablePath
-version:             0.04
+version:             0.05
 abstract:            Perl extension follow modules to exist in
-license:             ~
+license:             perl
 generated_by:        ExtUtils::MakeMaker version 6.32
 distribution_type:   module
 requires:     

@@ -14,7 +14,7 @@ use Sys::Hostname;
 use Config::IniFiles;
 use Carp;
 
-our $VERSION = q(0.04);
+our $VERSION = q(0.05);
 our $CONFIGS = {
 		'default' => q(/etc/perlconfig.ini),
 #		'^www'    => q(/host/specific/path/conf/perlconfig.ini),

@@ -1,5 +1,6 @@
 Revision history for Perl extension Module::PortablePath.
 
+0.05 kwalitee improvements
 0.04 cleaned up for perlcritic
 0.03 support for changing LD_LIBRARY_PATH via the [ldlibs] config section
 
