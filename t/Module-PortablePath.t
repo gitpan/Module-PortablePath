@@ -1,5 +1,8 @@
-use Test::More tests => 1;
-use Module::PortablePath;
+use strict;
+use warnings;
+use Test::More tests => 2;
 
-ok (exists($INC{"Module/PortablePath.pm"}), "use ok");
+$ENV{MODULE_PORTABLEPATH_CONF} = 'eg/perlconfig.ini';
+use_ok('Module::PortablePath');
 
+is($Module::PortablePath::CONFIGS->{default}, $ENV{MODULE_PORTABLEPATH_CONF}, 'environment config passed ok');

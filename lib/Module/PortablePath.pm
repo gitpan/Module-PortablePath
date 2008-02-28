@@ -3,7 +3,7 @@ package Module::PortablePath;
 # Author:        rmp
 # Maintainer:    rmp
 # Created:       2005-02-14
-# Last Modified: $Date$
+# Last Modified: $Date: 2008-02-28$
 # Id:            $Id$
 # Source:        $Source$
 # $HeadURL$
@@ -14,9 +14,9 @@ use Sys::Hostname;
 use Config::IniFiles;
 use Carp;
 
-our $VERSION = q(0.05);
+our $VERSION = q(0.06);
 our $CONFIGS = {
-		'default' => q(/etc/perlconfig.ini),
+		'default' => map { m{([a-z\d_\./]+)}mix } ($ENV{MODULE_PORTABLEPATH_CONF} || q(/etc/perlconfig.ini)),
 #		'^www'    => q(/host/specific/path/conf/perlconfig.ini),
 	       };
 
@@ -97,7 +97,7 @@ sub _import_ldlibs {
   my ($pkg, $config, @args) = @_;
   my $forward      = {};
   my $reverse      = {};
-  my @LDLIBS       = split /:/mx, $ENV{'LD_LIBRARY_PATH'}||q();
+  my @LDLIBS       = split /:/mx, $ENV{LD_LIBRARY_PATH}||q();
 
   for my $param ($config->Parameters('ldlibs')) {
     for my $v (split /[,\s;:]+/mx, $config->val('ldlibs', $param)||q()) {

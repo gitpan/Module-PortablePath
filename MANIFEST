@@ -1,11 +1,13 @@
 Changes
+MANIFEST
+Makefile
+Makefile.PL
+README
 eg/siteexample.pm
 lib/Module/PortablePath.pm
-Makefile.PL
-MANIFEST
-README
 t/00-critic.t
 t/00-pod.t
-t/distribution.t
+t/00-podcoverage.t
 t/Module-PortablePath.t
+t/distribution.t
 META.yml                                 Module meta-data (added by MakeMaker)
