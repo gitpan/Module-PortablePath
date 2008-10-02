@@ -10,17 +10,23 @@
 #
 package siteexample;
 use strict;
+use warnings;
 use Module::PortablePath;
-our $VERSION = "1.9";
+our $VERSION = q[0.07];
 
 sub import {
   $Module::PortablePath::CONFIGS = {
-				    'default'      => "/path/to/mysite/default/perlconfig.ini",
-				    '^webcluster'  => "/lustre/data/www/conf/perlconfig.ini",
-				    '^workcluster' => "/work/conf/perlconfig/ini",
+				    'default'      => q[/path/to/mysite/default/perlconfig.ini],
+				    '^webcluster'  => q[/lustre/data/www/conf/perlconfig.ini],
+				    '^workcluster' => q[/work/conf/perlconfig.ini],
 				   };
 
   &Module::PortablePath::import(@_);
 }
+
+sub config         { return &Module::PortablePath::config(@_); }
+sub _import_libs   { return &Module::PortablePath::_import_libs(@_); }
+sub _import_ldlibs { return &Module::PortablePath::_import_ldlibs(@_); }
+sub dump           { return &Module::PortablePath::dump(@_); }
 
 1;

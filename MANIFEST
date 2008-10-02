@@ -1,7 +1,5 @@
 Changes
 MANIFEST
-Makefile
-Makefile.PL
 README
 eg/siteexample.pm
 lib/Module/PortablePath.pm
@@ -10,4 +8,5 @@ t/00-pod.t
 t/00-podcoverage.t
 t/Module-PortablePath.t
 t/distribution.t
-META.yml                                 Module meta-data (added by MakeMaker)
+Makefile.PL
+META.yml

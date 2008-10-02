@@ -1,4 +1,3 @@
-package Module::PortablePath;
 #########
 # Author:        rmp
 # Maintainer:    rmp
@@ -8,21 +7,22 @@ package Module::PortablePath;
 # Source:        $Source$
 # $HeadURL$
 #
+package Module::PortablePath;
 use strict;
 use warnings;
 use Sys::Hostname;
 use Config::IniFiles;
 use Carp;
+use English qw(-no_match_vars);
 
-our $VERSION = q(0.06);
+our $VERSION = q[0.07];
 our $CONFIGS = {
-		'default' => map { m{([a-z\d_\./]+)}mix } ($ENV{MODULE_PORTABLEPATH_CONF} || q(/etc/perlconfig.ini)),
-#		'^www'    => q(/host/specific/path/conf/perlconfig.ini),
+		default => map { m{([a-z\d_\./]+)}mix } ($ENV{MODULE_PORTABLEPATH_CONF} || q[/etc/perlconfig.ini]),
 	       };
 
 sub config {
   my $cfgfile  = $CONFIGS->{'default'};
-  my $hostname = hostname() || q();
+  my $hostname = hostname() || q[];
 
   for my $k (sort { length $a <=> length $b } keys %{$CONFIGS}) {
     if($hostname =~ /$k/mx) {
@@ -62,7 +62,7 @@ sub _import_libs {
   my $reverse      = {};
 
   for my $param ($config->Parameters('libs')) {
-    for my $v (split /[,\s;:]+/mx, $config->val('libs', $param)||q()) {
+    for my $v (split /[,\s;:]+/mx, $config->val('libs', $param)||q[]) {
       $reverse->{$v} = $param;
       unshift @{$forward->{$param}}, $v;
     }
@@ -97,10 +97,10 @@ sub _import_ldlibs {
   my ($pkg, $config, @args) = @_;
   my $forward      = {};
   my $reverse      = {};
-  my @LDLIBS       = split /:/mx, $ENV{LD_LIBRARY_PATH}||q();
+  my @LDLIBS       = split /:/mx, $ENV{LD_LIBRARY_PATH}||q[];
 
   for my $param ($config->Parameters('ldlibs')) {
-    for my $v (split /[,\s;:]+/mx, $config->val('ldlibs', $param)||q()) {
+    for my $v (split /[,\s;:]+/mx, $config->val('ldlibs', $param) || q[]) {
       $reverse->{$v} = $param;
       unshift @{$forward->{$param}}, $v;
     }
@@ -136,11 +136,11 @@ sub _import_ldlibs {
 sub dump { ## no critic
   my $config = config();
   for my $l (qw(Libs LDlibs)) {
-    print $l, "\n";
+    print $l, "\n" or croak $ERRNO;
     for my $s (sort $config->Parameters(lc $l)) {
       printf qq(%-12s %s\n), $s, $config->val(lc $l, $s);
     }
-    print "\n\n";
+    print "\n\n" or croak $ERRNO;
   }
 
   return;
