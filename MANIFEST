@@ -9,4 +9,5 @@ t/00-podcoverage.t
 t/Module-PortablePath.t
 t/distribution.t
 Makefile.PL
+Build.PL
 META.yml

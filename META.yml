@@ -1,6 +1,6 @@
 ---
 name: Module-PortablePath
-version: 0.07
+version: 0.08
 author:
   - 'Roger M Pettett <rpettett@cpan.org>'
 abstract: 'Module::PortablePath - host-independent library paths'
@@ -14,7 +14,7 @@ build_requires:
 provides:
   Module::PortablePath:
     file: lib/Module/PortablePath.pm
-    version: 0.07
+    version: 0.08
 generated_by: Module::Build version 0.280801
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
