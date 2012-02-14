@@ -15,7 +15,7 @@ use Config::IniFiles;
 use Carp;
 use English qw(-no_match_vars);
 
-our $VERSION = q[0.09];
+our $VERSION = q[0.10];
 our $CONFIGS = {
 		default => map { m{([[:lower:][:digit:]_./]+)}smix } ($ENV{MODULE_PORTABLEPATH_CONF} || q[/etc/perlconfig.ini]),
 	       };

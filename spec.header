@@ -18,13 +18,13 @@ See README
 
 %build
 tar -xzf *.tar.gz
-cd Module-PortablePath*
-perl Build.PL
-./Build --prefix=$RPM_BUILD_ROOT/usr
+cd ONT*
+perl Build.PL --prefix=$RPM_BUILD_ROOT
+./Build
 
 %install
-cd Module-PortablePath*
-./Build install --prefix=$RPM_BUILD_ROOT/usr
+cd ONT*
+./Build install
 find $RPM_BUILD_ROOT -type f | sed "s|$RPM_BUILD_ROOT||g" > ../rpmbuild.manifest
 
 %files -f rpmbuild.manifest

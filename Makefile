@@ -1,7 +1,6 @@
 MPPMAJOR  ?= $(shell grep VERSION lib/Module/PortablePath.pm | head -1 | sed -E 's/\[|\]/ /g' | awk '{print $$5}' | cut -d . -f 1)
 MPPMINOR  ?= $(shell grep VERSION lib/Module/PortablePath.pm | head -1 | sed -E 's/\[|\]/ /g' | awk '{print $$5}' | cut -d . -f 2)
 RELEASE   ?= $(shell whoami)
-PREFIX    ?= /usr
 
 machine    = $(shell uname -m)
 servername = $(shell uname -n)
@@ -14,7 +13,7 @@ ifeq ($(arch), x86_64)
 endif
 
 all:	setup
-	./Build --prefix=$(PREFIX)
+	./Build
 
 setup:	manifest
 	perl Build.PL
@@ -52,7 +51,7 @@ cover:	setup
 	cover
 
 install:	setup
-	./Build install --prefix=$(PREFIX)
+	./Build install
 
 dist:	setup
 	./Build dist
