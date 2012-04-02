@@ -19,7 +19,7 @@ See README
 %build
 tar -xzf *.tar.gz
 cd Module*
-perl Build.PL --prefix=$RPM_BUILD_ROOT
+perl Build.PL --prefix=$RPM_BUILD_ROOT/usr
 ./Build
 
 %install
