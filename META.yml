@@ -16,9 +16,9 @@ name: Module-PortablePath
 provides:
   Module::PortablePath:
     file: lib/Module/PortablePath.pm
-    version: 0.12
+    version: 0.13
 requires:
   Config::IniFiles: 2.38
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.12
+version: 0.13

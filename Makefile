@@ -1,6 +1,5 @@
-MPPMAJOR  ?= $(shell grep VERSION lib/Module/PortablePath.pm | head -1 | sed -E 's/\[|\]/ /g' | awk '{print $$5}' | cut -d . -f 1)
-MPPMINOR  ?= $(shell grep VERSION lib/Module/PortablePath.pm | head -1 | sed -E 's/\[|\]/ /g' | awk '{print $$5}' | cut -d . -f 2)
-RELEASE   ?= $(shell whoami)
+MPPMAJOR = $(shell perl -Ilib -MModule::PortablePath -e 'print Module::PortablePath->VERSION =~ /^(\d+)/')
+MPPMINOR = $(shell perl -Ilib -MModule::PortablePath -e 'print Module::PortablePath->VERSION =~ /(\d+)$$/')
 
 machine    = $(shell uname -m)
 servername = $(shell uname -n)
