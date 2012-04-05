@@ -25,6 +25,8 @@ perl Build.PL --prefix=$RPM_BUILD_ROOT/usr
 %install
 cd Module*
 ./Build install
+find $RPM_BUILD_ROOT -name \*1 -exec gzip {} \;
+find $RPM_BUILD_ROOT -name \*3pm -exec gzip {} \;
 find $RPM_BUILD_ROOT -type f | sed "s|$RPM_BUILD_ROOT||g" > ../rpmbuild.manifest
 
 %files -f rpmbuild.manifest
