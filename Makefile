@@ -62,17 +62,16 @@ rpm:	clean manifest
 	cp spec.header spec
 	perl -i -pe 's/MPPMAJOR/$(MPPMAJOR)/g' spec
 	perl -i -pe 's/MPPMINOR/$(MPPMINOR)/g' spec
-	perl -i -pe 's/RELEASE/$(RELEASE)/g' spec
 	mkdir -p rpmbuild/BUILD rpmbuild/RPMS rpmbuild/SOURCES rpmbuild/SPECS rpmbuild/SRPMS
 	perl Build.PL
 	./Build dist
-	mv Mod*gz rpmbuild/SOURCES/module-portablepath-$(RELEASE)-$(MPPMAJOR)-$(MPPMINOR).tar.gz
-	cp rpmbuild/SOURCES/module-portablepath-$(RELEASE)-$(MPPMAJOR)-$(MPPMINOR).tar.gz rpmbuild/BUILD/
+	mv Mod*gz rpmbuild/SOURCES/module-portablepath-$(MPPMAJOR)-$(MPPMINOR).tar.gz
+	cp rpmbuild/SOURCES/module-portablepath-$(MPPMAJOR)-$(MPPMINOR).tar.gz rpmbuild/BUILD/
 	rpmbuild -v --define="_topdir `pwd`/rpmbuild" \
-		    --buildroot `pwd`/rpmbuild/module-portablepath-$(RELEASE)-$(MPPMAJOR)-$(MPPMINOR)-root \
+		    --buildroot `pwd`/rpmbuild/module-portablepath-$(MPPMAJOR)-$(MPPMINOR)-root \
 		    --target=$(arch)-redhat-linux        \
 		    -ba spec
 	cp rpmbuild/RPMS/*/mod*.rpm .
 
 deb:	rpm
-	fakeroot alien  -d module-portablepath-$(RELEASE)-$(MPPMAJOR)-$(MPPMINOR).$(arch).rpm
+	fakeroot alien  -d module-portablepath-$(MPPMAJOR)-$(MPPMINOR).$(arch).rpm
