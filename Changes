@@ -1,6 +1,6 @@
 Revision history for Perl extension Module::PortablePath.
 
-0.13 packaging & build updates
+0.16 packaging & build updates
 0.10 trivial documentation update
 0.09 perlcritic fixes, changed to standard Makefile build process.
 0.08 Moved to Build.PL

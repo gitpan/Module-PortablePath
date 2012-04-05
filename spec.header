@@ -1,10 +1,10 @@
 Summary: Barcode Printing
-Name: module-portablepath-RELEASE
+Name: module-portablepath
 Version: MPPMAJOR
 Release: MPPMINOR
 License: GPL
 Group: Applications
-Source: module-portablepath-RELEASE-MPPMAJOR-MPPMINOR.tar.gz
+Source: module-portablepath-MPPMAJOR-MPPMINOR.tar.gz
 URL: http://search.cpan.org/~rpettett/Module-PortablePath/
 Distribution: psyphi.net
 Vendor: psyphi.net
